@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gatinho :3</title>
+
+    <style>
+        body {
+            background-color: #ffe4ec;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        h1 {
+            color: #ff69a6;
+        }
+
+        .gato {
+            font-size: 120px;
+            margin: 20px;
+        }
+
+        button {
+            background-color: #ff69a6;
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        button:hover {
+            background-color: #ff1493;
+        }
+
+        #mensagem {
+            font-size: 22px;
+            color: #d63384;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>🐱 SITE DO GATO 🐱</h1>
+
+    <div class="gato" id="gato"> ฅ^•ﻌ•^ฅ </div>
+
+    <p>Olá, humano. Eu sou um gato.</p>
+
+    <button onclick="miau()">CLIQUE PARA OUVIR O GATO</button>
+
+    <p id="mensagem"></p>
+
+    <script>
+        function miau() {
+            document.getElementById("mensagem").innerText =
+                "MIAAAAAAUUUUU 🐈";
+
+            document.getElementById("gato").innerText =
+                "ฅ(=｀ω´=)ฅ";
+        }
+    </script>
+
+</body>
+</html>
