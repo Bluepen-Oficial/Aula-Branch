@@ -2,70 +2,98 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gatinho :3</title>
+<meta charset="UTF-8">
+<title>O GATO</title>
 
-    <style>
-        body {
-            background-color: #ffe4ec;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding-top: 80px;
-        }
+<style>
+    body {
+        background: #b8d8ff;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 0;
+        padding: 40px;
+    }
 
-        h1 {
-            color: #ff69a6;
-        }
+    h1 {
+        color: #222;
+        font-size: 45px;
+    }
 
-        .gato {
-            font-size: 120px;
-            margin: 20px;
-        }
+    .cartao {
+        background: white;
+        max-width: 400px;
+        margin: auto;
+        padding: 25px;
+        border-radius: 20px;
+        box-shadow: 5px 5px 0px #555;
+    }
 
-        button {
-            background-color: #ff69a6;
-            color: white;
-            border: none;
-            padding: 15px 25px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 18px;
-        }
+    img {
+        width: 100%;
+        border-radius: 15px;
+    }
 
-        button:hover {
-            background-color: #ff1493;
-        }
+    button {
+        background: black;
+        color: white;
+        padding: 15px 25px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 18px;
+        margin-top: 15px;
+    }
 
-        #mensagem {
-            font-size: 22px;
-            color: #d63384;
-            margin-top: 20px;
-        }
-    </style>
+    button:hover {
+        background: #555;
+    }
+
+    #resposta {
+        font-size: 22px;
+        font-weight: bold;
+    }
+</style>
 </head>
 
 <body>
 
-    <h1>🐱 SITE DO GATO 🐱</h1>
+<h1>OLHE PARA ESTE GATO</h1>
 
-    <div class="gato" id="gato"> ฅ^•ﻌ•^ฅ </div>
+<div class="cartao">
 
-    <p>Olá, humano. Eu sou um gato.</p>
+    <img
+      src="https://images.rawpixel.com/image_social_landscape/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTEyL2FuZ3VzdGVvd19waG90b19vZl9jdXRlX2dpbmdlcl9jYXRfc2l0dGluZ19hbmRfbG9va2luZ19hdF90aGVfY18yNDRmYzlkYy02NTkxLTRmOGItYjAyZi05OWZiZTEyNTgxNDRfMS5qcGc.jpg"
+      alt="Foto de um gato laranja">
 
-    <button onclick="miau()">CLIQUE PARA OUVIR O GATO</button>
+    <h2>GERALDO</h2>
 
-    <p id="mensagem"></p>
+    <p>Idade: 4 anos</p>
+    <p>Profissão: Comer e dormir</p>
+    <p>Estado civil: Casado com o sachê</p>
 
-    <script>
-        function miau() {
-            document.getElementById("mensagem").innerText =
-                "MIAAAAAAUUUUU 🐈";
+    <button onclick="gato()">FALAR COM GERALDO</button>
 
-            document.getElementById("gato").innerText =
-                "ฅ(=｀ω´=)ฅ";
-        }
-    </script>
+    <p id="resposta"></p>
+
+</div>
+
+<script>
+function gato() {
+    const frases = [
+        "MIAU.",
+        "Me dê comida.",
+        "Você está no meu território.",
+        "Não sou seu amigo.",
+        "Quero dormir.",
+        "Derrubei seu copo.",
+        "Miau miau miau.",
+        "Respeite minha autoridade."
+    ];
+
+    document.getElementById("resposta").innerText =
+        frases[Math.floor(Math.random() * frases.length)];
+}
+</script>
 
 </body>
 </html>
