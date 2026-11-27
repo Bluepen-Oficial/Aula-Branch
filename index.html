@@ -3,96 +3,328 @@
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
-<title>O GATO GERALDO</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O Gato Geraldo 🐱</title>
 
 <style>
-    body {
-        background: #b8d8ff;
-        font-family: Arial, sans-serif;
-        text-align: center;
-        margin: 0;
-        padding: 40px;
-    }
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
 
-    h1 {
-        color: #222;
-        font-size: 45px;
-    }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #b8d8ff, #d9c5ff, #ffcce5);
+    font-family: 'Nunito', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 15px;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 470px;
+    text-align: center;
+}
+
+.tag {
+    display: inline-block;
+    background: white;
+    color: #8062bd;
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-weight: 800;
+    font-size: 13px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 12px #00000010;
+}
+
+h1 {
+    color: #30294b;
+    font-size: clamp(32px, 8vw, 46px);
+    font-weight: 900;
+    margin-bottom: 8px;
+}
+
+.subtitulo {
+    color: #655b80;
+    margin-bottom: 25px;
+    font-size: 16px;
+}
+
+.cartao {
+    background: rgba(255,255,255,0.88);
+    padding: 22px;
+    border-radius: 28px;
+    box-shadow: 0 15px 40px #55408025;
+    border: 1px solid #ffffff;
+    transition: transform 0.3s;
+}
+
+.cartao:hover {
+    transform: translateY(-5px);
+}
+
+.foto-container {
+    position: relative;
+}
+
+.foto {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 20px;
+    animation: aparecer 0.8s ease;
+}
+
+.status {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background: #b6f5c6;
+    color: #23683b;
+    padding: 7px 13px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 900;
+}
+
+h2 {
+    color: #392d55;
+    font-size: 32px;
+    margin-top: 18px;
+    font-weight: 900;
+}
+
+.descricao {
+    color: #81758f;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.info {
+    background: #f5f0ff;
+    padding: 15px;
+    border-radius: 16px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.info p {
+    padding: 6px 0;
+    color: #51456c;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.info span {
+    margin-right: 8px;
+}
+
+.botoes {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+button {
+    flex: 1;
+    min-width: 130px;
+    padding: 14px 10px;
+    border: none;
+    border-radius: 14px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 900;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    transform: scale(1.04);
+    filter: brightness(1.05);
+}
+
+button:active {
+    transform: scale(0.96);
+}
+
+.btn-falar {
+    background: #8062bd;
+    color: white;
+}
+
+.btn-comida {
+    background: #ffbd69;
+    color: #573710;
+}
+
+.resposta {
+    min-height: 65px;
+    margin-top: 18px;
+    padding: 15px;
+    border-radius: 15px;
+    background: #fff4df;
+    color: #74502a;
+    font-weight: 800;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: aparecer 0.3s ease;
+}
+
+.contador {
+    color: #81758f;
+    font-size: 13px;
+    margin-top: 18px;
+    font-weight: 700;
+}
+
+.rodape {
+    margin-top: 20px;
+    color: #655b80;
+    font-size: 12px;
+}
+
+.coracao {
+    color: #e77ca8;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes flutuar {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-7px); }
+}
+
+.foto-container {
+    animation: flutuar 3s ease-in-out infinite;
+}
+
+@media(max-width: 400px) {
     .cartao {
-        background: white;
-        max-width: 400px;
-        margin: auto;
-        padding: 25px;
-        border-radius: 20px;
-        box-shadow: 5px 5px 0px #555;
+        padding: 15px;
     }
 
-    img {
-        width: 100%;
-        border-radius: 15px;
+    .foto {
+        height: 240px;
     }
-
-    button {
-        background: black;
-        color: white;
-        padding: 15px 25px;
-        border: none;
-        border-radius: 10px;
-        cursor: pointer;
-        font-size: 18px;
-        margin-top: 15px;
-    }
-
-    button:hover {
-        background: #555;
-    }
-
-    #resposta {
-        font-size: 22px;
-        font-weight: bold;
-    }
+}
 </style>
 </head>
 
 <body>
 
-<h1>OLHE PARA ESTE GATO</h1>
+<div class="container">
 
-<div class="cartao">
+    <div class="tag">🐾 SITE OFICIAL DO GERALDO</div>
 
-    <img
-      src="https://images.rawpixel.com/image_social_landscape/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTEyL2FuZ3VzdGVvd19waG90b19vZl9jdXRlX2dpbmdlcl9jYXRfc2l0dGluZ19hbmRfbG9va2luZ19hdF90aGVfY18yNDRmYzlkYy02NTkxLTRmOGItYjAyZi05OWZiZTEyNTgxNDRfMS5qcGc.jpg"
-      alt="Foto de um gato laranja">
+    <h1>OLHE PARA ESTE GATO</h1>
+    <p class="subtitulo">Um gato. Uma lenda. Uma personalidade difícil.</p>
 
-    <h2>GERALDO</h2>
+    <div class="cartao">
 
-    <p>Idade: 4 anos</p>
-    <p>Profissão: Comer e dormir</p>
-    <p>Estado civil: Casado com o sachê</p>
+        <div class="foto-container">
+            <img
+                class="foto"
+                src="https://images.rawpixel.com/image_social_landscape/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTEyL2FuZ3VzdGVvd19waG90b19vZl9jdXRlX2dpbmdlcl9jYXRfc2l0dGluZ19hbmRfbG9va2luZ19hdF90aGVfY18yNDRmYzlkYy02NTkxLTRmOGItYjAyZi05OWZiZTEyNTgxNDRfMS5qcGc.jpg"
+                alt="Geraldo, o gato laranja"
+            >
+            <div class="status">● ONLINE</div>
+        </div>
 
-    <button onclick="gato()">FALAR COM GERALDO</button>
+        <h2>GERALDO 🐱</h2>
+        <p class="descricao">CEO da preguiça e fiscal de sachês.</p>
 
-    <p id="resposta"></p>
+        <div class="info">
+            <p><span>🎂</span> Idade: 4 anos</p>
+            <p><span>💼</span> Profissão: Comer e dormir</p>
+            <p><span>💍</span> Estado civil: Casado com o sachê</p>
+            <p><span>💰</span> Salário: 3 sachês por dia</p>
+            <p><span>🧠</span> Inteligência: Questionável</p>
+        </div>
+
+        <div class="botoes">
+            <button class="btn-falar" onclick="gato()">
+                💬 FALAR COM GERALDO
+            </button>
+
+            <button class="btn-comida" onclick="comida()">
+                🍗 DAR COMIDA
+            </button>
+        </div>
+
+        <div class="resposta" id="resposta">
+            Geraldo está te ignorando...
+        </div>
+
+        <p class="contador">
+            Conversas com Geraldo: <span id="contador">0</span>
+        </p>
+
+    </div>
+
+    <p class="rodape">
+        Feito com <span class="coracao">♥</span> e muito sachê.
+        Todos os direitos reservados ao Geraldo.
+    </p>
 
 </div>
 
 <script>
-function gato() {
-    const frases = [
-        "MIAU.",
-        "Me dê comida.",
-        "Você está no meu território.",
-        "Não sou seu amigo.",
-        "Quero dormir.",
-        "Derrubei seu copo.",
-        "Miau miau miau.",
-        "Respeite minha autoridade."
-    ];
 
-    document.getElementById("resposta").innerText =
-        frases[Math.floor(Math.random() * frases.length)];
+let conversas = 0;
+
+const frases = [
+    "MIAU. E não me interrompa.",
+    "Me dê comida. AGORA.",
+    "Você está no meu território.",
+    "Não sou seu amigo. Sou seu superior.",
+    "Quero dormir. Saia daqui.",
+    "Derrubei seu copo. E faria de novo.",
+    "Miau miau miau. Entendeu?",
+    "Respeite minha autoridade!",
+    "Você trabalha para mim, humano.",
+    "Estou pensando em fazer uma besteira.",
+    "Não encoste na minha barriga.",
+    "O sachê está atrasado.",
+    "Hoje não estou aceitando visitas."
+];
+
+function gato() {
+    const frase = frases[Math.floor(Math.random() * frases.length)];
+
+    document.getElementById("resposta").innerText = "🐱 " + frase;
+
+    conversas++;
+
+    document.getElementById("contador").innerText = conversas;
 }
+
+function comida() {
+    document.getElementById("resposta").innerText =
+        "😻 GERALDO ESTÁ FELIZ! Você ganhou 5 segundos de respeito.";
+
+    conversas++;
+
+    document.getElementById("contador").innerText = conversas;
+}
+
 </script>
 
 </body>
