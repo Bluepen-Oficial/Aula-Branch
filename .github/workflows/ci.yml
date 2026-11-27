@@ -20,6 +20,7 @@ jobs:
           password: ${{ secrets.SSH_PASSWORD }}
           port: 22
           script: |
+            cd /var/www/html/
             if [ -d "Aula-Branch/.git" ]; then
                 cd Aula-Branch
                 git pull origin main
